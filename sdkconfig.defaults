@@ -9,8 +9,10 @@ CONFIG_PARTITION_TABLE_CUSTOM=y
 CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions_example.csv"
 CONFIG_PARTITION_TABLE_FILENAME="partitions_example.csv"
 
-# Console (REPL + logs) on the USB Serial/JTAG Type-C port
-CONFIG_ESP_CONSOLE_USB_SERIAL_JTAG=y
+# Console (REPL + logs) on UART0 (USB-UART bridge port).
+# Logs are mirrored to the USB Serial/JTAG port as an output-only secondary console.
+CONFIG_ESP_CONSOLE_UART_DEFAULT=y
+CONFIG_ESP_CONSOLE_SECONDARY_USB_SERIAL_JTAG=y
 
 # 'tasks' command
 CONFIG_FREERTOS_USE_TRACE_FACILITY=y

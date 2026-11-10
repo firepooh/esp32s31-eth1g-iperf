@@ -2,7 +2,8 @@
  * ESP32-S31-Function-CoreBoard-1 : 1G Ethernet iperf test firmware (ESP-IDF v6.1)
  * Based on ESP-IDF examples/ethernet/iperf (Unlicense OR CC0-1.0)
  *
- * Console: USB Serial/JTAG (Type-C "USB Serial/JTAG" port)
+ * Console: UART0 (Type-C "USB-UART" port, 115200 bps)
+ *          Logs are mirrored to the Type-C "USB-DBG" (USB Serial/JTAG) port, output only.
  */
 #include <string.h>
 #include "sdkconfig.h"
