@@ -1,0 +1,14 @@
+# ESP-IDF build outputs
+build/
+managed_components/
+
+# Generated per machine (regenerated from sdkconfig.defaults / idf_component.yml)
+sdkconfig
+sdkconfig.old
+dependencies.lock
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

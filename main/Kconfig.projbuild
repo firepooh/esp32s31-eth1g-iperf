@@ -1,0 +1,47 @@
+menu "S31 Ethernet Test Configuration"
+
+    config EXAMPLE_STORE_HISTORY
+        bool "Store command history in flash"
+        default y
+        help
+            Linenoise line editing library provides functions to save and load
+            command history. If this option is enabled, initializes a FAT filesystem
+            and uses it to store command history.
+
+    config ETH_TEST_PHY_RST_GPIO
+        int "PHY reset GPIO (-1 = not used)"
+        range -1 63
+        default 7
+        help
+            ESP32-S31-Function-CoreBoard-1 drives the YT8531 reset from GPIO7.
+
+    config ETH_TEST_PHY_ADDR
+        int "PHY MDIO address (-1 = auto detect)"
+        range -1 31
+        default -1
+
+    config ETH_TEST_YT8531_INIT
+        bool "Apply YT8531 RGMII TX/RX clock delay setup"
+        default y
+        help
+            Re-enable auto-negotiation and set ~2 ns RGMII TX/RX clock delays
+            in the Motorcomm YT8531 extended registers.
+
+    config ETH_TEST_DHCP_TIMEOUT_S
+        int "DHCP timeout before static IP fallback (s, 0 = never)"
+        range 0 3600
+        default 15
+
+    config ETH_TEST_STATIC_IP
+        string "Fallback static IP"
+        default "192.168.10.10"
+
+    config ETH_TEST_STATIC_NETMASK
+        string "Fallback netmask"
+        default "255.255.255.0"
+
+    config ETH_TEST_STATIC_GW
+        string "Fallback gateway"
+        default "192.168.10.1"
+
+endmenu
