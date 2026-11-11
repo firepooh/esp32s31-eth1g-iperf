@@ -3,6 +3,16 @@
 ESP32-S31-Function-CoreBoard-1의 기가비트 이더넷을 점검하는 펌웨어다.
 ESP-IDF v6.1의 `examples/ethernet/iperf`를 바탕으로 만들었다.
 
+## 웹 플래셔
+
+**<https://firepooh.github.io/esp32s31-eth1g-iperf/>**
+
+1. 데스크톱 Chrome이나 Edge로 연다.
+2. 보드의 USB-UART Type-C 포트를 PC에 연결한다.
+3. 버전을 고르고 **연결** → **플래시**를 누른다.
+
+바이너리와 esptool 명령은 [Releases](https://github.com/firepooh/esp32s31-eth1g-iperf/releases)에 있다.
+
 ## 사용 보드
 
 ![ESP32-S31-Function-CoreBoard-1 부품 배치](docs/images/esp32-s31-function-coreboard-1.webp)
@@ -106,6 +116,17 @@ idf.py --preview build flash monitor
 - USB-UART 포트의 DTR/RTS 자동 리셋 회로로 다운로드 모드에 들어간다. BOOT 버튼을 누를 필요가 없다.
 - 콘솔을 USB Serial/JTAG 포트로 되돌리려면 `sdkconfig.defaults`에서 `CONFIG_ESP_CONSOLE_USB_SERIAL_JTAG=y`로 바꾼다.
 - `sdkconfig.defaults`를 고친 뒤에는 기존 `sdkconfig`를 지우고 다시 빌드한다. 지우지 않으면 바뀐 기본값이 반영되지 않는다.
+- 릴리즈 빌드는 저장소의 `sdkconfig`로 빌드한다. 다시 만든 `sdkconfig`도 함께 커밋한다.
+
+### 릴리즈 빌드
+
+`v*` 태그를 푸시하면 GitHub Actions가 빌드해 릴리즈와 웹 플래셔를 갱신한다.
+
+- `espressif/idf:v6.1` Docker 이미지로 빌드한다.
+- 릴리즈에는 병합 이미지(`-merged.bin`), 개별 파일 묶음(`-all.zip`), `SHA256SUMS.txt`를 올린다.
+- `-`가 들어간 태그(`v1.1.0-rc1`)는 프리릴리즈가 된다.
+- `dependencies.lock`으로 컴포넌트 버전을 고정한다.
+- Actions 탭에서 "Release build"를 수동 실행하면 릴리즈 없이 빌드 결과만 아티팩트로 남는다.
 
 ## 콘솔 명령
 
@@ -283,5 +304,7 @@ PHY_LED1, PHY_LED2가 RJ45 커넥터 LED로 이어지는 것으로 보인다.
   원본 라이선스는 Unlicense 또는 CC0-1.0이다.
 - `main/eth_s31.c`의 YT8531 초기화 순서는 ESP-IDF `examples/ethernet/basic`을 따랐다.
   원본 라이선스는 Apache-2.0이다.
-- `cmd_system` 컴포넌트는 빌드할 때 ESP-IDF 설치 경로에서 가져온다.
+- `components/cmd_system`은 ESP-IDF `examples/system/console/advanced`의 컴포넌트를 그대로 복사한 것이다.
+  원본 라이선스는 Unlicense 또는 CC0-1.0이다.
+- `web/index.html`은 [esptool-js](https://github.com/espressif/esptool-js) 0.7.1을 CDN에서 불러 쓴다.
 - `docs/images`의 보드 사진과 PHY 회로도는 Espressif의 보드 공개 자료에서 가져왔다.
