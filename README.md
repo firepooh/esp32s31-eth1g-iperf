@@ -1,3 +1,5 @@
+**한국어** | [English](README.en.md)
+
 # ESP32-S31 1G Ethernet iperf 테스트 펌웨어
 
 ESP32-S31-Function-CoreBoard-1의 기가비트 이더넷을 점검하는 펌웨어다.
