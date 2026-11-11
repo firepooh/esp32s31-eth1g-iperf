@@ -5,41 +5,41 @@
 <text x="24" y="74" font-size="12.5" fill="#52514e">UDP 수신은 손실 0.1 % 이하로 받은 최대 송신 속도</text>
 <rect x="24" y="92" width="12" height="12" rx="3" fill="#2a78d6"/>
 <text x="42" y="102" font-size="12" fill="#0b0b0b">단일 코어</text>
-<rect x="110" y="92" width="12" height="12" rx="3" fill="#eb6834"/>
-<text x="128" y="102" font-size="12" fill="#0b0b0b">듀얼 코어</text>
-<line x1="210.0" y1="116" x2="210.0" y2="368" stroke="#e4e3df" stroke-width="1"/>
-<text x="210.0" y="384" font-size="11" fill="#898781" text-anchor="middle">0</text>
-<line x1="290.0" y1="116" x2="290.0" y2="368" stroke="#e4e3df" stroke-width="1"/>
-<text x="290.0" y="384" font-size="11" fill="#898781" text-anchor="middle">50</text>
-<line x1="370.0" y1="116" x2="370.0" y2="368" stroke="#e4e3df" stroke-width="1"/>
-<text x="370.0" y="384" font-size="11" fill="#898781" text-anchor="middle">100</text>
-<line x1="450.0" y1="116" x2="450.0" y2="368" stroke="#e4e3df" stroke-width="1"/>
-<text x="450.0" y="384" font-size="11" fill="#898781" text-anchor="middle">150</text>
-<line x1="530.0" y1="116" x2="530.0" y2="368" stroke="#e4e3df" stroke-width="1"/>
-<text x="530.0" y="384" font-size="11" fill="#898781" text-anchor="middle">200</text>
-<line x1="610.0" y1="116" x2="610.0" y2="368" stroke="#e4e3df" stroke-width="1"/>
-<text x="610.0" y="384" font-size="11" fill="#898781" text-anchor="middle">250</text>
+<rect x="124.72" y="92" width="12" height="12" rx="3" fill="#eb6834"/>
+<text x="142.72" y="102" font-size="12" fill="#0b0b0b">듀얼 코어</text>
+<line x1="203.0" y1="116" x2="203.0" y2="368" stroke="#e4e3df" stroke-width="1"/>
+<text x="203.0" y="384" font-size="11" fill="#898781" text-anchor="middle">0</text>
+<line x1="284.2" y1="116" x2="284.2" y2="368" stroke="#e4e3df" stroke-width="1"/>
+<text x="284.2" y="384" font-size="11" fill="#898781" text-anchor="middle">50</text>
+<line x1="365.3" y1="116" x2="365.3" y2="368" stroke="#e4e3df" stroke-width="1"/>
+<text x="365.3" y="384" font-size="11" fill="#898781" text-anchor="middle">100</text>
+<line x1="446.5" y1="116" x2="446.5" y2="368" stroke="#e4e3df" stroke-width="1"/>
+<text x="446.5" y="384" font-size="11" fill="#898781" text-anchor="middle">150</text>
+<line x1="527.7" y1="116" x2="527.7" y2="368" stroke="#e4e3df" stroke-width="1"/>
+<text x="527.7" y="384" font-size="11" fill="#898781" text-anchor="middle">200</text>
+<line x1="608.8" y1="116" x2="608.8" y2="368" stroke="#e4e3df" stroke-width="1"/>
+<text x="608.8" y="384" font-size="11" fill="#898781" text-anchor="middle">250</text>
 <line x1="690.0" y1="116" x2="690.0" y2="368" stroke="#e4e3df" stroke-width="1"/>
 <text x="690.0" y="384" font-size="11" fill="#898781" text-anchor="middle">300</text>
 <text x="690.0" y="400" font-size="11" fill="#898781" text-anchor="end">Mbit/s</text>
-<text x="198" y="145.0" font-size="12.5" fill="#0b0b0b" text-anchor="end">TCP 수신 (PC → 보드)</text>
-<path d="M210,122 h271.0 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-271.0 z" fill="#2a78d6"/>
-<text x="491.0" y="135" font-size="11.5" fill="#52514e">171.9</text>
-<path d="M210,142 h201.8 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-201.8 z" fill="#eb6834"/>
-<text x="421.8" y="155" font-size="11.5" fill="#52514e">128.6</text>
-<text x="198" y="209.0" font-size="12.5" fill="#0b0b0b" text-anchor="end">TCP 송신 (보드 → PC)</text>
-<path d="M210,186 h300.0 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-300.0 z" fill="#2a78d6"/>
-<text x="520.0" y="199" font-size="11.5" fill="#52514e">190.0</text>
-<path d="M210,206 h300.8 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-300.8 z" fill="#eb6834"/>
-<text x="520.8" y="219" font-size="11.5" fill="#52514e">190.5</text>
-<text x="198" y="273.0" font-size="12.5" fill="#0b0b0b" text-anchor="end">UDP 송신 (보드 → PC)</text>
-<path d="M210,250 h440.2 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-440.2 z" fill="#2a78d6"/>
-<text x="660.2" y="263" font-size="11.5" fill="#52514e">277.6</text>
-<path d="M210,270 h329.1 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-329.1 z" fill="#eb6834"/>
-<text x="549.1" y="283" font-size="11.5" fill="#52514e">208.2</text>
-<text x="198" y="337.0" font-size="12.5" fill="#0b0b0b" text-anchor="end">UDP 수신 (손실 없는 최대)</text>
-<path d="M210,314 h276.0 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-276.0 z" fill="#2a78d6"/>
-<text x="496.0" y="327" font-size="11.5" fill="#52514e">175</text>
-<path d="M210,334 h196.0 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-196.0 z" fill="#eb6834"/>
-<text x="416.0" y="347" font-size="11.5" fill="#52514e">125</text>
+<text x="191" y="145.0" font-size="12.5" fill="#0b0b0b" text-anchor="end">TCP 수신 (PC → 보드)</text>
+<path d="M203,122 h275.1 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-275.1 z" fill="#2a78d6"/>
+<text x="488.1" y="135" font-size="11.5" fill="#52514e">171.9</text>
+<path d="M203,142 h204.8 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-204.8 z" fill="#eb6834"/>
+<text x="417.8" y="155" font-size="11.5" fill="#52514e">128.6</text>
+<text x="191" y="209.0" font-size="12.5" fill="#0b0b0b" text-anchor="end">TCP 송신 (보드 → PC)</text>
+<path d="M203,186 h304.4 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-304.4 z" fill="#2a78d6"/>
+<text x="517.4" y="199" font-size="11.5" fill="#52514e">190.0</text>
+<path d="M203,206 h305.2 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-305.2 z" fill="#eb6834"/>
+<text x="518.2" y="219" font-size="11.5" fill="#52514e">190.5</text>
+<text x="191" y="273.0" font-size="12.5" fill="#0b0b0b" text-anchor="end">UDP 송신 (보드 → PC)</text>
+<path d="M203,250 h446.6 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-446.6 z" fill="#2a78d6"/>
+<text x="659.6" y="263" font-size="11.5" fill="#52514e">277.6</text>
+<path d="M203,270 h334.0 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-334.0 z" fill="#eb6834"/>
+<text x="547.0" y="283" font-size="11.5" fill="#52514e">208.2</text>
+<text x="191" y="337.0" font-size="12.5" fill="#0b0b0b" text-anchor="end">UDP 수신 (손실 없는 최대)</text>
+<path d="M203,314 h280.1 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-280.1 z" fill="#2a78d6"/>
+<text x="493.1" y="327" font-size="11.5" fill="#52514e">175</text>
+<path d="M203,334 h198.9 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-198.9 z" fill="#eb6834"/>
+<text x="411.9" y="347" font-size="11.5" fill="#52514e">125</text>
 </svg>

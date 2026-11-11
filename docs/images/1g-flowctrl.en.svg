@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="408" viewBox="0 0 760 408" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+<rect width="760" height="408" rx="8" fill="#fcfcfb"/>
+<text x="24" y="34" font-size="17" font-weight="600" fill="#0b0b0b">Effect of flow control (single core)</text>
+<text x="24" y="56" font-size="12.5" fill="#52514e">Board iperf, Mbit/s. TCP and UDP: mean of five 10 s runs.</text>
+<text x="24" y="74" font-size="12.5" fill="#52514e">UDP receive: highest offered rate received with ≤ 0.1 % loss.</text>
+<rect x="24" y="92" width="12" height="12" rx="3" fill="#898781"/>
+<text x="42" y="102" font-size="12" fill="#0b0b0b">Flow control off</text>
+<rect x="177.52" y="92" width="12" height="12" rx="3" fill="#2a78d6"/>
+<text x="195.52" y="102" font-size="12" fill="#0b0b0b">Flow control on</text>
+<line x1="250.0" y1="116" x2="250.0" y2="368" stroke="#e4e3df" stroke-width="1"/>
+<text x="250.0" y="384" font-size="11" fill="#898781" text-anchor="middle">0</text>
+<line x1="323.3" y1="116" x2="323.3" y2="368" stroke="#e4e3df" stroke-width="1"/>
+<text x="323.3" y="384" font-size="11" fill="#898781" text-anchor="middle">50</text>
+<line x1="396.7" y1="116" x2="396.7" y2="368" stroke="#e4e3df" stroke-width="1"/>
+<text x="396.7" y="384" font-size="11" fill="#898781" text-anchor="middle">100</text>
+<line x1="470.0" y1="116" x2="470.0" y2="368" stroke="#e4e3df" stroke-width="1"/>
+<text x="470.0" y="384" font-size="11" fill="#898781" text-anchor="middle">150</text>
+<line x1="543.3" y1="116" x2="543.3" y2="368" stroke="#e4e3df" stroke-width="1"/>
+<text x="543.3" y="384" font-size="11" fill="#898781" text-anchor="middle">200</text>
+<line x1="616.7" y1="116" x2="616.7" y2="368" stroke="#e4e3df" stroke-width="1"/>
+<text x="616.7" y="384" font-size="11" fill="#898781" text-anchor="middle">250</text>
+<line x1="690.0" y1="116" x2="690.0" y2="368" stroke="#e4e3df" stroke-width="1"/>
+<text x="690.0" y="384" font-size="11" fill="#898781" text-anchor="middle">300</text>
+<text x="690.0" y="400" font-size="11" fill="#898781" text-anchor="end">Mbit/s</text>
+<text x="238" y="145.0" font-size="12.5" fill="#0b0b0b" text-anchor="end">TCP receive (PC → board)</text>
+<path d="M250,122 h196.8 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-196.8 z" fill="#898781"/>
+<text x="456.8" y="135" font-size="11.5" fill="#52514e">136.9</text>
+<path d="M250,142 h248.1 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-248.1 z" fill="#2a78d6"/>
+<text x="508.1" y="155" font-size="11.5" fill="#52514e">171.9</text>
+<text x="238" y="209.0" font-size="12.5" fill="#0b0b0b" text-anchor="end">TCP transmit (board → PC)</text>
+<path d="M250,186 h274.1 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-274.1 z" fill="#898781"/>
+<text x="534.1" y="199" font-size="11.5" fill="#52514e">189.6</text>
+<path d="M250,206 h274.7 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-274.7 z" fill="#2a78d6"/>
+<text x="534.7" y="219" font-size="11.5" fill="#52514e">190.0</text>
+<text x="238" y="273.0" font-size="12.5" fill="#0b0b0b" text-anchor="end">UDP transmit (board → PC)</text>
+<path d="M250,250 h404.2 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-404.2 z" fill="#898781"/>
+<text x="664.2" y="263" font-size="11.5" fill="#52514e">278.3</text>
+<path d="M250,270 h403.1 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-403.1 z" fill="#2a78d6"/>
+<text x="663.1" y="283" font-size="11.5" fill="#52514e">277.6</text>
+<text x="238" y="337.0" font-size="12.5" fill="#0b0b0b" text-anchor="end">UDP receive (max without loss)</text>
+<path d="M250,314 h252.7 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-252.7 z" fill="#898781"/>
+<text x="512.7" y="327" font-size="11.5" fill="#52514e">175</text>
+<path d="M250,334 h252.7 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-252.7 z" fill="#2a78d6"/>
+<text x="512.7" y="347" font-size="11.5" fill="#52514e">175</text>
+</svg>
