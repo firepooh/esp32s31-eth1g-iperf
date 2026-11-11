@@ -1,0 +1,403 @@
+{
+  "label": "single-core, flow control on, QIO 80 MHz, 320 MHz",
+  "date": "2026-11-11T23:27:28",
+  "board_ip": "192.168.0.71",
+  "pc_ip": "192.168.0.12",
+  "flow_control": "on (pause advertised: local=1 partner=1)",
+  "link": "1000 Mbps, full duplex, autoneg on",
+  "tcp_rx": {
+    "board_mbps": {
+      "mean": 171.93,
+      "min": 171.83,
+      "max": 172.03,
+      "runs": [
+        171.98,
+        171.83,
+        171.87,
+        172.03,
+        171.93
+      ]
+    },
+    "per_second_median_mbps": {
+      "mean": 171.92,
+      "min": 171.84,
+      "max": 171.97,
+      "runs": [
+        171.97,
+        171.84,
+        171.9,
+        171.97,
+        171.905
+      ]
+    },
+    "runs": [
+      {
+        "board_mbps": 171.98,
+        "per_second_median": 171.97,
+        "stall_seconds": 0,
+        "per_second": [
+          171.57,
+          171.97,
+          171.97,
+          171.96,
+          172.1,
+          171.97,
+          172.1,
+          172.23,
+          171.97,
+          171.97
+        ],
+        "pc_sent_mbytes": 216.14
+      },
+      {
+        "board_mbps": 171.83,
+        "per_second_median": 171.84,
+        "stall_seconds": 0,
+        "per_second": [
+          171.44,
+          171.84,
+          171.82,
+          171.97,
+          171.84,
+          171.84,
+          172.1,
+          171.84,
+          171.84,
+          171.84
+        ],
+        "pc_sent_mbytes": 215.88
+      },
+      {
+        "board_mbps": 171.87,
+        "per_second_median": 171.9,
+        "stall_seconds": 0,
+        "per_second": [
+          171.44,
+          171.84,
+          171.96,
+          171.29,
+          171.56,
+          171.97,
+          172.23,
+          171.84,
+          172.36,
+          172.23
+        ],
+        "pc_sent_mbytes": 216.01
+      },
+      {
+        "board_mbps": 172.03,
+        "per_second_median": 171.97,
+        "stall_seconds": 0,
+        "per_second": [
+          171.84,
+          171.97,
+          171.97,
+          171.97,
+          171.97,
+          172.23,
+          172.36,
+          171.84,
+          172.1,
+          172.1
+        ],
+        "pc_sent_mbytes": 216.14
+      },
+      {
+        "board_mbps": 171.93,
+        "per_second_median": 171.905,
+        "stall_seconds": 0,
+        "per_second": [
+          171.7,
+          171.97,
+          171.84,
+          171.84,
+          172.1,
+          172.1,
+          171.97,
+          171.84,
+          171.84,
+          172.1
+        ],
+        "pc_sent_mbytes": 216.01
+      }
+    ]
+  },
+  "tcp_tx": {
+    "board_mbps": {
+      "mean": 189.97,
+      "min": 189.7,
+      "max": 190.4,
+      "runs": [
+        189.7,
+        190.02,
+        189.9,
+        189.83,
+        190.4
+      ]
+    },
+    "per_second_median_mbps": {
+      "mean": 189.74,
+      "min": 189.4,
+      "max": 189.92,
+      "runs": [
+        189.4,
+        189.725,
+        189.79,
+        189.92,
+        189.855
+      ]
+    },
+    "runs": [
+      {
+        "board_mbps": 189.7,
+        "per_second_median": 189.4,
+        "stall_seconds": 0,
+        "per_second": [
+          189.4,
+          190.32,
+          189.92,
+          189.4,
+          189.01,
+          189.4,
+          189.27,
+          188.87,
+          190.32,
+          191.1
+        ],
+        "pc_received_mbytes": 237.16
+      },
+      {
+        "board_mbps": 190.02,
+        "per_second_median": 189.725,
+        "stall_seconds": 0,
+        "per_second": [
+          188.22,
+          189.4,
+          189.4,
+          189.66,
+          189.79,
+          192.81,
+          191.37,
+          190.05,
+          189.53,
+          189.92
+        ],
+        "pc_received_mbytes": 237.55
+      },
+      {
+        "board_mbps": 189.9,
+        "per_second_median": 189.79,
+        "stall_seconds": 0,
+        "per_second": [
+          188.35,
+          190.05,
+          190.84,
+          189.79,
+          189.79,
+          189.79,
+          191.1,
+          189.79,
+          189.4,
+          190.05
+        ],
+        "pc_received_mbytes": 237.4
+      },
+      {
+        "board_mbps": 189.83,
+        "per_second_median": 189.92,
+        "stall_seconds": 0,
+        "per_second": [
+          188.35,
+          189.79,
+          189.92,
+          189.92,
+          190.32,
+          189.92,
+          190.19,
+          189.79,
+          189.92,
+          190.19
+        ],
+        "pc_received_mbytes": 237.31
+      },
+      {
+        "board_mbps": 190.4,
+        "per_second_median": 189.855,
+        "stall_seconds": 0,
+        "per_second": [
+          188.35,
+          189.66,
+          189.92,
+          189.79,
+          189.79,
+          192.54,
+          191.63,
+          189.4,
+          190.45,
+          192.41
+        ],
+        "pc_received_mbytes": 238.04
+      }
+    ]
+  },
+  "udp_tx": {
+    "board_mbps": {
+      "mean": 277.63,
+      "min": 277.54,
+      "max": 277.71,
+      "runs": [
+        277.71,
+        277.67,
+        277.54,
+        277.67,
+        277.54
+      ]
+    },
+    "runs": [
+      {
+        "board_mbps": 277.71,
+        "board_sent_mbytes": 347.13,
+        "pc_received_mbytes": 347.13,
+        "pc_lost_by_packet_id": 0,
+        "pc_datagrams": 236145
+      },
+      {
+        "board_mbps": 277.67,
+        "board_sent_mbytes": 347.09,
+        "pc_received_mbytes": 347.09,
+        "pc_lost_by_packet_id": 0,
+        "pc_datagrams": 236118
+      },
+      {
+        "board_mbps": 277.54,
+        "board_sent_mbytes": 346.92,
+        "pc_received_mbytes": 346.93,
+        "pc_lost_by_packet_id": 0,
+        "pc_datagrams": 236004
+      },
+      {
+        "board_mbps": 277.67,
+        "board_sent_mbytes": 347.09,
+        "pc_received_mbytes": 347.09,
+        "pc_lost_by_packet_id": 0,
+        "pc_datagrams": 236118
+      },
+      {
+        "board_mbps": 277.54,
+        "board_sent_mbytes": 346.92,
+        "pc_received_mbytes": 346.93,
+        "pc_lost_by_packet_id": 0,
+        "pc_datagrams": 236004
+      }
+    ]
+  },
+  "udp_rx_sweep": [
+    {
+      "offered_mbps": 100,
+      "pc_sent_mbytes": 62.5,
+      "board_received_mbytes": 62.5,
+      "received_mbps": 100.0,
+      "loss_pct": 0.0,
+      "starving_warnings": 0
+    },
+    {
+      "offered_mbps": 125,
+      "pc_sent_mbytes": 78.12,
+      "board_received_mbytes": 78.12,
+      "received_mbps": 125.0,
+      "loss_pct": 0.01,
+      "starving_warnings": 0
+    },
+    {
+      "offered_mbps": 150,
+      "pc_sent_mbytes": 93.75,
+      "board_received_mbytes": 93.75,
+      "received_mbps": 150.0,
+      "loss_pct": 0.0,
+      "starving_warnings": 0
+    },
+    {
+      "offered_mbps": 175,
+      "pc_sent_mbytes": 109.37,
+      "board_received_mbytes": 109.32,
+      "received_mbps": 174.9,
+      "loss_pct": 0.05,
+      "starving_warnings": 0
+    },
+    {
+      "offered_mbps": 200,
+      "pc_sent_mbytes": 125.0,
+      "board_received_mbytes": 82.02,
+      "received_mbps": 131.2,
+      "loss_pct": 34.38,
+      "starving_warnings": 0
+    },
+    {
+      "offered_mbps": 250,
+      "pc_sent_mbytes": 156.25,
+      "board_received_mbytes": 15.39,
+      "received_mbps": 24.6,
+      "loss_pct": 90.15,
+      "starving_warnings": 0
+    },
+    {
+      "offered_mbps": 300,
+      "pc_sent_mbytes": 179.06,
+      "board_received_mbytes": 0.09,
+      "received_mbps": 0.1,
+      "loss_pct": 99.95,
+      "starving_warnings": 0
+    }
+  ],
+  "tcp_tx_multi": {
+    "requested_streams": 4,
+    "connected_streams": 2,
+    "board_per_stream_mbps": [
+      95.07,
+      95.15
+    ],
+    "board_total_mbps": 190.22,
+    "per_second_total": [
+      189.8,
+      189.9,
+      190.2,
+      189.7,
+      190.1,
+      190.6,
+      190.6,
+      190.2,
+      190.8,
+      190.3
+    ],
+    "per_second_median_mbps": 190.2,
+    "pc_total_mbps": 190.24
+  },
+  "tcp_rx_multi": {
+    "streams": 2,
+    "board_per_stream_mbps": [
+      87.23,
+      86.91
+    ],
+    "board_total_mbps": 174.14,
+    "per_second_total": [
+      173.8,
+      174.2,
+      174.3,
+      174.2,
+      174.2,
+      174.4,
+      173.6,
+      174.6,
+      174.6,
+      173.4
+    ],
+    "per_second_median_mbps": 174.2,
+    "steady_total_mbps_4_to_10s": 174.1
+  },
+  "phy_after": {
+    "idle_errors": 0,
+    "gbsr": "GBSR  : partner 1000FD=1 1000HD=0, role=master, local_rx=OK, remote_rx=OK, MS fault=0",
+    "ssr": "SSR   : link up, 1000 Mbps, full duplex, resolved=1, MDI, downgrade=0"
+  }
+}

@@ -19,6 +19,7 @@
 #include "esp_eth.h"
 #include "esp_netif.h"
 #include "sdkconfig.h"
+#include "soc/emac_dma_struct.h"
 #include "eth_s31.h"
 
 static const char *TAG = "eth_s31";
@@ -75,6 +76,7 @@ static volatile bool s_got_ip;
 static volatile bool s_static_mode;
 static bool s_is_motorcomm;
 static bool s_adv_fallback_done;
+static bool s_flow_ctrl;
 static uint32_t s_phy_addr;
 
 /* ---------------------------------------------------------------- PHY access */
@@ -310,6 +312,14 @@ esp_err_t eth_s31_init(void)
     }
     ESP_RETURN_ON_ERROR(phy_specific_init(), TAG, "PHY specific init failed");
 
+    /* Pause-frame flow control: keeps the RX DMA ring (CONFIG_ETH_DMA_RX_BUFFER_NUM) from
+     * overflowing when the peer bursts at 1 Gbps. Without it, a few dropped frames stall
+     * TCP RX for 1-4 s (lwIP keeps only 4 out-of-order segments and sends no SACK).
+     * Takes effect only if the link partner also advertises pause. */
+    uint32_t fc = 1;   /* esp_eth reads this as bool for the MAC and as uint32_t for the PHY */
+    ESP_RETURN_ON_ERROR(esp_eth_ioctl(s_eth, ETH_CMD_S_FLOW_CTRL, &fc), TAG, "enable flow control failed");
+    s_flow_ctrl = true;
+
     esp_netif_config_t ncfg = ESP_NETIF_DEFAULT_ETH();
     s_netif = esp_netif_new(&ncfg);
     ESP_RETURN_ON_FALSE(s_netif, ESP_FAIL, TAG, "netif create failed");
@@ -468,5 +478,37 @@ esp_err_t eth_s31_set_adv(bool gigabit)
     }
     ESP_RETURN_ON_ERROR(phy_wr(PHY_REG_GBCR, gbcr), TAG, "write GBCR failed");
     ESP_LOGI(TAG, "Advertising %s, restarting auto-negotiation", gigabit ? "1000/100/10" : "100/10 only");
+    return esp_eth_start(s_eth);
+}
+
+void eth_s31_print_stats(void)
+{
+    /* EMAC DMA "Missed Frame and Buffer Overflow Counter" register, cleared on read */
+    uint32_t v = EMAC_DMA.dmamissedfr.val;
+    uint32_t no_desc = v & 0xFFFFU;
+    uint32_t fifo_ovf = (v >> 17) & 0x7FFU;
+    printf("EMAC RX frames dropped since last read:\n");
+    printf("  no free RX DMA descriptor : %" PRIu32 "%s\n", no_desc, (v & (1U << 16)) ? " (counter wrapped)" : "");
+    printf("  RX FIFO overflow          : %" PRIu32 "%s\n", fifo_ovf, (v & (1U << 28)) ? " (counter wrapped)" : "");
+    uint32_t anar = 0, anlpar = 0;
+    phy_rd(PHY_REG_ANAR, &anar);
+    phy_rd(PHY_REG_ANLPAR, &anlpar);
+    printf("Flow control: %s (pause advertised: local=%d partner=%d)\n", s_flow_ctrl ? "on" : "off",
+           (int)((anar >> 10) & 1), (int)((anlpar >> 10) & 1));
+}
+
+esp_err_t eth_s31_set_flow_ctrl(bool enable)
+{
+    ESP_RETURN_ON_FALSE(s_eth, ESP_ERR_INVALID_STATE, TAG, "driver not installed");
+    ESP_RETURN_ON_ERROR(esp_eth_stop(s_eth), TAG, "eth stop failed");
+    uint32_t fc = enable ? 1 : 0;   /* read as bool by the MAC and as uint32_t by the PHY */
+    ESP_RETURN_ON_ERROR(esp_eth_ioctl(s_eth, ETH_CMD_S_FLOW_CTRL, &fc), TAG, "set flow control failed");
+    s_flow_ctrl = enable;
+#if !CONFIG_ETH_SOFT_FLOW_CONTROL
+    if (enable) {
+        ESP_LOGW(TAG, "CONFIG_ETH_SOFT_FLOW_CONTROL is off: pause frames will not be sent on RX congestion");
+    }
+#endif
+    ESP_LOGI(TAG, "Flow control %s, restarting auto-negotiation", enable ? "on" : "off");
     return esp_eth_start(s_eth);
 }

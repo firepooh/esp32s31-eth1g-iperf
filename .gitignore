@@ -5,6 +5,9 @@ managed_components/
 # sdkconfig and dependencies.lock are committed: the release CI builds from them
 sdkconfig.old
 
+# Python (tools/)
+__pycache__/
+
 # Editor / OS
 .vscode/
 .idea/

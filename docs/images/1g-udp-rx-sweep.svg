@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+<rect width="760" height="420" rx="8" fill="#fcfcfb"/>
+<text x="24" y="34" font-size="17" font-weight="600" fill="#0b0b0b">1G UDP 수신: 보낸 속도별 보드 수신 속도</text>
+<text x="24" y="56" font-size="12.5" fill="#52514e">PC가 5초 동안 일정 속도로 보낼 때 보드가 받은 속도, Mbit/s</text>
+<rect x="24" y="74" width="12" height="12" rx="3" fill="#2a78d6"/>
+<text x="42" y="84" font-size="12" fill="#0b0b0b">단일 코어 (최대 174.9)</text>
+<rect x="198" y="74" width="12" height="12" rx="3" fill="#eb6834"/>
+<text x="216" y="84" font-size="12" fill="#0b0b0b">듀얼 코어 (최대 148.4)</text>
+<line x1="64" y1="364.0" x2="670" y2="364.0" stroke="#e4e3df" stroke-width="1"/>
+<text x="56" y="368.0" font-size="11" fill="#898781" text-anchor="end">0</text>
+<line x1="64" y1="312.0" x2="670" y2="312.0" stroke="#e4e3df" stroke-width="1"/>
+<text x="56" y="316.0" font-size="11" fill="#898781" text-anchor="end">50</text>
+<line x1="64" y1="260.0" x2="670" y2="260.0" stroke="#e4e3df" stroke-width="1"/>
+<text x="56" y="264.0" font-size="11" fill="#898781" text-anchor="end">100</text>
+<line x1="64" y1="208.0" x2="670" y2="208.0" stroke="#e4e3df" stroke-width="1"/>
+<text x="56" y="212.0" font-size="11" fill="#898781" text-anchor="end">150</text>
+<line x1="64" y1="156.0" x2="670" y2="156.0" stroke="#e4e3df" stroke-width="1"/>
+<text x="56" y="160.0" font-size="11" fill="#898781" text-anchor="end">200</text>
+<line x1="64" y1="104.0" x2="670" y2="104.0" stroke="#e4e3df" stroke-width="1"/>
+<text x="56" y="108.0" font-size="11" fill="#898781" text-anchor="end">250</text>
+<text x="64.0" y="382" font-size="11" fill="#898781" text-anchor="middle">100</text>
+<text x="139.8" y="382" font-size="11" fill="#898781" text-anchor="middle">125</text>
+<text x="215.5" y="382" font-size="11" fill="#898781" text-anchor="middle">150</text>
+<text x="291.2" y="382" font-size="11" fill="#898781" text-anchor="middle">175</text>
+<text x="367.0" y="382" font-size="11" fill="#898781" text-anchor="middle">200</text>
+<text x="518.5" y="382" font-size="11" fill="#898781" text-anchor="middle">250</text>
+<text x="670.0" y="382" font-size="11" fill="#898781" text-anchor="middle">300</text>
+<text x="367.0" y="406" font-size="12" fill="#52514e" text-anchor="middle">PC 송신 속도 (Mbit/s)</text>
+<line x1="64.0" y1="260.0" x2="518.5" y2="104.0" stroke="#898781" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="524.5" y="108.0" font-size="11" fill="#898781">손실 없음</text>
+<path d="M64.0,260.0 L139.8,234.0 L215.5,208.0 L291.2,182.1 L367.0,227.6 L518.5,338.4 L670.0,363.9" fill="none" stroke="#2a78d6" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="64.0" cy="260.0" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="139.8" cy="234.0" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="215.5" cy="208.0" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="291.2" cy="182.1" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="367.0" cy="227.6" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="518.5" cy="338.4" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="670.0" cy="363.9" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<path d="M64.0,260.0 L139.8,234.0 L215.5,209.7 L291.2,285.8 L367.0,352.9 L518.5,362.9 L670.0,363.3" fill="none" stroke="#eb6834" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="64.0" cy="260.0" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="139.8" cy="234.0" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="215.5" cy="209.7" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="291.2" cy="285.8" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="367.0" cy="352.9" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="518.5" cy="362.9" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="670.0" cy="363.3" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"/>
+</svg>

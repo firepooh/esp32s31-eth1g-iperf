@@ -37,6 +37,15 @@ esp_err_t eth_s31_use_dhcp(void);
  */
 esp_err_t eth_s31_set_adv(bool gigabit);
 
+/** @brief Print EMAC RX drop counters (cleared on read) and the flow control state */
+void eth_s31_print_stats(void);
+
+/**
+ * @brief Turn Ethernet flow control (pause frames) on or off and restart the link.
+ *        Takes effect only when the link partner also advertises pause.
+ */
+esp_err_t eth_s31_set_flow_ctrl(bool enable);
+
 #ifdef __cplusplus
 }
 #endif

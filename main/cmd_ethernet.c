@@ -15,7 +15,9 @@ static void print_usage(void)
            "  ethernet phy                     PHY register dump (1G status, idle error count)\n"
            "  ethernet speed <auto|100>        auto: advertise 1000/100/10, 100: limit to 100M\n"
            "  ethernet ip <addr> <mask> [gw]   set static IP\n"
-           "  ethernet dhcp                    use DHCP client\n");
+           "  ethernet dhcp                    use DHCP client\n"
+           "  ethernet stats                   EMAC RX drop counters (cleared on read)\n"
+           "  ethernet flowctrl <on|off>       pause-frame flow control, restarts the link\n");
 }
 
 static int eth_cmd(int argc, char **argv)
@@ -45,6 +47,14 @@ static int eth_cmd(int argc, char **argv)
             return 1;
         }
         err = eth_s31_set_adv(strcmp(argv[2], "100") != 0);
+    } else if (!strcmp(sub, "stats")) {
+        eth_s31_print_stats();
+    } else if (!strcmp(sub, "flowctrl")) {
+        if (argc < 3 || (strcmp(argv[2], "on") && strcmp(argv[2], "off"))) {
+            print_usage();
+            return 1;
+        }
+        err = eth_s31_set_flow_ctrl(!strcmp(argv[2], "on"));
     } else {
         print_usage();
         return 1;
@@ -60,7 +70,7 @@ void register_ethernet_commands(void)
 {
     const esp_console_cmd_t cmd = {
         .command = "ethernet",
-        .help = "Ethernet control: info | phy | speed <auto|100> | ip <addr> <mask> [gw] | dhcp",
+        .help = "Ethernet control: info | phy | speed <auto|100> | ip <addr> <mask> [gw] | dhcp | stats | flowctrl <on|off>",
         .hint = NULL,
         .func = eth_cmd,
         .argtable = NULL,

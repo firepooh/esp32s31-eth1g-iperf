@@ -5,6 +5,8 @@ CONFIG_ESP_MAIN_TASK_STACK_SIZE=7168
 
 # Flash / partitions (console history on FAT)
 CONFIG_ESPTOOLPY_FLASHSIZE_16MB=y
+# Quad I/O flash reads (XMC 0x46 flash on WROOM-3). 80 MHz is the S31 maximum.
+CONFIG_ESPTOOLPY_FLASHMODE_QIO=y
 CONFIG_PARTITION_TABLE_CUSTOM=y
 CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions_example.csv"
 CONFIG_PARTITION_TABLE_FILENAME="partitions_example.csv"
@@ -23,8 +25,9 @@ CONFIG_FREERTOS_USE_STATS_FORMATTING_FUNCTIONS=y
 # --------------------------------
 CONFIG_COMPILER_OPTIMIZATION_PERF=y
 CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_320=y
-# lwIP and iperf are serially dependent; single core + IRAM gives best iperf numbers
-CONFIG_FREERTOS_UNICORE=y
+# Dual core (default): the configuration most applications use.
+# Set to y for the highest throughput: single core is up to 29 % faster (see README).
+CONFIG_FREERTOS_UNICORE=n
 CONFIG_FREERTOS_IN_IRAM=y
 CONFIG_ESP_INT_WDT=n
 CONFIG_ESP_TASK_WDT_EN=n
@@ -36,6 +39,9 @@ CONFIG_ETH_IRAM_OPTIMIZATION=y
 CONFIG_ETH_DMA_BUFFER_SIZE=1600
 CONFIG_ETH_DMA_RX_BUFFER_NUM=30
 CONFIG_ETH_DMA_TX_BUFFER_NUM=30
+# Send pause frames when free RX descriptors run low. Flow control is switched on at
+# boot in eth_s31.c (console: `ethernet flowctrl on|off`); needs a pause-capable link partner.
+CONFIG_ETH_SOFT_FLOW_CONTROL=y
 
 # lwIP windows / mailboxes sized for gigabit
 CONFIG_LWIP_TCP_MSS=1460

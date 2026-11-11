@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="408" viewBox="0 0 760 408" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+<rect width="760" height="408" rx="8" fill="#fcfcfb"/>
+<text x="24" y="34" font-size="17" font-weight="600" fill="#0b0b0b">흐름 제어 효과 (단일 코어)</text>
+<text x="24" y="56" font-size="12.5" fill="#52514e">보드 iperf 측정, Mbit/s. TCP·UDP는 10초 측정 5회의 평균,</text>
+<text x="24" y="74" font-size="12.5" fill="#52514e">UDP 수신은 손실 0.1 % 이하로 받은 최대 송신 속도</text>
+<rect x="24" y="92" width="12" height="12" rx="3" fill="#898781"/>
+<text x="42" y="102" font-size="12" fill="#0b0b0b">흐름 제어 꺼짐</text>
+<rect x="134" y="92" width="12" height="12" rx="3" fill="#2a78d6"/>
+<text x="152" y="102" font-size="12" fill="#0b0b0b">흐름 제어 켬</text>
+<line x1="210.0" y1="116" x2="210.0" y2="368" stroke="#e4e3df" stroke-width="1"/>
+<text x="210.0" y="384" font-size="11" fill="#898781" text-anchor="middle">0</text>
+<line x1="290.0" y1="116" x2="290.0" y2="368" stroke="#e4e3df" stroke-width="1"/>
+<text x="290.0" y="384" font-size="11" fill="#898781" text-anchor="middle">50</text>
+<line x1="370.0" y1="116" x2="370.0" y2="368" stroke="#e4e3df" stroke-width="1"/>
+<text x="370.0" y="384" font-size="11" fill="#898781" text-anchor="middle">100</text>
+<line x1="450.0" y1="116" x2="450.0" y2="368" stroke="#e4e3df" stroke-width="1"/>
+<text x="450.0" y="384" font-size="11" fill="#898781" text-anchor="middle">150</text>
+<line x1="530.0" y1="116" x2="530.0" y2="368" stroke="#e4e3df" stroke-width="1"/>
+<text x="530.0" y="384" font-size="11" fill="#898781" text-anchor="middle">200</text>
+<line x1="610.0" y1="116" x2="610.0" y2="368" stroke="#e4e3df" stroke-width="1"/>
+<text x="610.0" y="384" font-size="11" fill="#898781" text-anchor="middle">250</text>
+<line x1="690.0" y1="116" x2="690.0" y2="368" stroke="#e4e3df" stroke-width="1"/>
+<text x="690.0" y="384" font-size="11" fill="#898781" text-anchor="middle">300</text>
+<text x="690.0" y="400" font-size="11" fill="#898781" text-anchor="end">Mbit/s</text>
+<text x="198" y="145.0" font-size="12.5" fill="#0b0b0b" text-anchor="end">TCP 수신 (PC → 보드)</text>
+<path d="M210,122 h215.0 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-215.0 z" fill="#898781"/>
+<text x="435.0" y="135" font-size="11.5" fill="#52514e">136.9</text>
+<path d="M210,142 h271.0 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-271.0 z" fill="#2a78d6"/>
+<text x="491.0" y="155" font-size="11.5" fill="#52514e">171.9</text>
+<text x="198" y="209.0" font-size="12.5" fill="#0b0b0b" text-anchor="end">TCP 송신 (보드 → PC)</text>
+<path d="M210,186 h299.4 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-299.4 z" fill="#898781"/>
+<text x="519.4" y="199" font-size="11.5" fill="#52514e">189.6</text>
+<path d="M210,206 h300.0 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-300.0 z" fill="#2a78d6"/>
+<text x="520.0" y="219" font-size="11.5" fill="#52514e">190.0</text>
+<text x="198" y="273.0" font-size="12.5" fill="#0b0b0b" text-anchor="end">UDP 송신 (보드 → PC)</text>
+<path d="M210,250 h441.3 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-441.3 z" fill="#898781"/>
+<text x="661.3" y="263" font-size="11.5" fill="#52514e">278.3</text>
+<path d="M210,270 h440.2 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-440.2 z" fill="#2a78d6"/>
+<text x="660.2" y="283" font-size="11.5" fill="#52514e">277.6</text>
+<text x="198" y="337.0" font-size="12.5" fill="#0b0b0b" text-anchor="end">UDP 수신 (손실 없는 최대)</text>
+<path d="M210,314 h276.0 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-276.0 z" fill="#898781"/>
+<text x="496.0" y="327" font-size="11.5" fill="#52514e">175</text>
+<path d="M210,334 h276.0 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-276.0 z" fill="#2a78d6"/>
+<text x="496.0" y="347" font-size="11.5" fill="#52514e">175</text>
+</svg>
