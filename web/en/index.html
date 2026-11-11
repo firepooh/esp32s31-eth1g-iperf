@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ESP32-S31 1G Ethernet iperf Web Flasher</title>
+<link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+<main>
+  <p class="lang"><a href="../" hreflang="ko">한국어</a> | <b>English</b></p>
+  <h1>ESP32-S31 1G Ethernet iperf Web Flasher</h1>
+  <p class="muted">Flash the ESP32-S31-Function-CoreBoard-1 1G Ethernet (RGMII, YT8531) iperf test firmware straight from the browser.
+     Use desktop Chrome or Edge.</p>
+
+  <div id="nowebserial" class="warn" hidden>
+    This browser does not support Web Serial. Please open this page in desktop Chrome or Edge.
+  </div>
+
+  <section class="card">
+    <div class="row">
+      <div class="grow">
+        <label for="ver">Firmware version (merged.bin)</label>
+        <select id="ver"><option>Loading list…</option></select>
+      </div>
+      <div class="baud">
+        <label for="baud">Baud</label>
+        <select id="baud">
+          <option value="115200">115200</option>
+          <option value="230400">230400</option>
+          <option value="460800" selected>460800</option>
+          <option value="921600">921600</option>
+        </select>
+      </div>
+    </div>
+    <div id="info" class="info"></div>
+    <label class="check">
+      <input type="checkbox" id="nostub" checked />
+      Flash with the ROM loader (no stub)
+    </label>
+    <p class="muted" style="margin-top:2px">ESP-IDF flashes the ESP32-S31 without the stub (<code>--no-stub</code>), so this is the default.
+       Unchecking it uses the esptool-js stub, which flashes faster and enables full-chip erase.</p>
+    <div class="btns">
+      <button id="connect">1. Connect</button>
+      <button id="flash" disabled>2. Flash (0x0)</button>
+      <button id="erase" class="danger" disabled>Erase entire flash</button>
+      <button id="disconnect" class="neutral" disabled>Disconnect</button>
+    </div>
+    <div class="progress">
+      <progress id="prog" value="0" max="100"></progress>
+      <span id="progtxt" class="muted">0%</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>How to use</h2>
+    <ol>
+      <li>Connect the board's <b>USB-UART Type-C port</b> to the PC.</li>
+      <li>Click <b>1. Connect</b> and pick the board's COM port. Check that the chip is an ESP32-S31.</li>
+      <li>Pick a version and click <b>2. Flash</b>. The board resets automatically when done.</li>
+      <li>If it does not connect, hold the Boot button, press and release Reset to enter download mode, then connect again.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Log</h2>
+    <div id="log"></div>
+  </section>
+
+  <p class="muted">
+    merged.bin is a single image of the bootloader, partition table and app, written from 0x0.
+    Binaries are built automatically with ESP-IDF v6.1 on
+    <a href="https://github.com/firepooh/esp32s31-eth1g-iperf/releases">GitHub Releases</a>.
+    Source: <a href="https://github.com/firepooh/esp32s31-eth1g-iperf">firepooh/esp32s31-eth1g-iperf</a>.
+    Flashing engine: <a href="https://github.com/espressif/esptool-js">esptool-js</a>.
+  </p>
+</main>
+
+<script type="module">
+  import { init } from "../flasher.js";
+  init({
+    base: "../",
+    t: {
+      romLoader: "Using the ROM loader without the stub.",
+      download: "Download",
+      releaseNotes: "Release notes",
+      noFirmware: "No firmware available",
+      noFirmwareLog: "[info] No firmware has been released yet. Pushing a v* tag to the repository adds it to this list.",
+      latest: "latest",
+      prerelease: "pre-release",
+      listFailed: "Could not load the list",
+      manifestFailed: "[error] Failed to load manifest.json: ",
+      connectedChip: "[ok] Connected chip: ",
+      wrongChip: (chip) => `[error] This firmware is for ${chip} only. Disconnecting.`,
+      connectFailed: "[error] Connection failed: ",
+      downloading: "[step] Downloading: ",
+      downloadHttp: "Download HTTP ",
+      shaMismatch: "SHA-256 does not match the manifest. The file may be corrupted.",
+      shaOk: "[ok] SHA-256 matches",
+      writing: (n) => `[step] Writing ${n} bytes from 0x0.`,
+      flashDone: "[done] Flashing finished. Resetting the board.",
+      resetFailed: "[info] Automatic reset failed. Please press the Reset button.",
+      flashFailed: "[error] Flashing failed: ",
+      eraseConfirm: "This erases the entire flash memory. Continue?",
+      erasing: "[step] Erasing the entire flash… (this can take tens of seconds)",
+      eraseDone: "[done] Erase complete",
+      eraseFailed: "[error] Erase failed: ",
+      disconnected: "[ok] Disconnected.",
+    },
+  });
+</script>
+</body>
+</html>

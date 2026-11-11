@@ -5,7 +5,7 @@
 Firmware for checking the Gigabit Ethernet (internal EMAC, RGMII, YT8531 PHY) of the ESP32-S31-Function-CoreBoard-1.
 It is based on `examples/ethernet/iperf` from ESP-IDF v6.1.
 
-- **Web flasher:** <https://firepooh.github.io/esp32s31-eth1g-iperf/> (desktop Chrome/Edge: connect the USB-UART port, then **Connect** → **Flash**)
+- **Web flasher:** <https://firepooh.github.io/esp32s31-eth1g-iperf/en/> (desktop Chrome/Edge: connect the USB-UART port, then **Connect** → **Flash**)
 - **Binaries:** [Releases](https://github.com/firepooh/esp32s31-eth1g-iperf/releases)
 
 ## Results Summary
